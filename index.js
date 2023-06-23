@@ -1,9 +1,15 @@
-// TODO: Include packages needed for this application
+// packages needed for this application
 const inquirer = require('inquirer');
+const generateMarkdown = require('./utils/generateMarkdown.js'); 
 const fs = require('fs');
 
-// TODO: Create an array of questions for user input
-const questions = [
+inquirer
+    .prompt([
+    {
+        type: 'input',
+        message: 'What is the name of your project?',
+        name: 'name',
+    },
     {
         type: 'input',
         message: 'Provide a short description of your project. What was your motivation? What problem does it solve?',
@@ -28,7 +34,7 @@ const questions = [
         type: 'list',
         message: 'Select the license type used in your project.',
         name: 'license',
-        choices: ['MIT', 'Apache', 'GPL'],
+        choices: ['MIT', 'Apache', 'IBM', 'none'],
     },
     {
         type: 'input',
@@ -45,24 +51,55 @@ const questions = [
         message: 'What is your email?',
         name: 'email',
     }
-];
+])
+    .then((response) => {
+const fileData = 
+`# ${response.name}
 
-// TODO: Create a function to write README file
-function writeToFile(fileName, data) {
-    const fileData = ``
-    
-    fs.writeFile('README.md', fileData, (err) =>
-    err ? console.error(err) : console.log('Success!')
+## Description
+
+${response.description}
+        
+## Table of Contents
+
+Description
+Installation
+Usage
+Contributions
+License
+Tests
+Questions
+        
+## Installation
+
+${response.installation}
+        
+## Usage
+
+${response.usage}
+        
+## Contributions
+
+${response.contributions}
+        
+## License
+
+${response.license}
+        
+## Tests
+
+${response.tests}
+        
+## Questions
+
+Questions? I can be reached via email: ${response.email} or on GitHub: ${response.github}`
+
+        fs.writeFile('README.md', fileData, (err) =>
+        err ? console.error(err) : console.log('Success!')
+        );
+    }
     );
-}
 
-// REMEMBER TO INCLUDE TABLE OF CONTENTS IN README************* and add github/email to questions section 
-
-// TODO: Create a function to initialize app
-function init() {
-    
-    writeToFile();
-}
-
-// Function call to initialize app
-init();
+// REFERENCES TO ADD TO README WHEN DONE
+// https://gist.github.com/lukas-h/2a5d00690736b4c3a7ba
+// https://github.com/lstillwe/readme-generator/blob/main/utils/generateMarkdown.js 
