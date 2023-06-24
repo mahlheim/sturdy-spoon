@@ -28,7 +28,7 @@ const questions = [
     {
         type: 'input',
         message: 'List any contribution guidelines for your project.',
-        name: 'contributing',
+        name: 'contributions',
     },
     {
         type: 'list',
@@ -39,7 +39,7 @@ const questions = [
     {
         type: 'input',
         message: 'Provide test instructions for your project.',
-        name: 'test',
+        name: 'tests',
     },
     {
         type:'input',
@@ -57,11 +57,11 @@ const questions = [
 function writeToFile(response) {
     const fileName = 'README.md';
 
-    fs.writeFile(fileName, response, (err) =>
+    fs.writeFile(fileName, response, function (err) {
         err ? console.error(err) : console.log('Success!')
-    );
+    });
 }
-
+ 
 // function that initializes app
 function init() {
     inquirer.prompt(questions)
@@ -73,5 +73,6 @@ init();
 
 
 // REFERENCES TO ADD TO README WHEN DONE
-// https://gist.github.com/lukas-h/2a5d00690736b4c3a7ba
 // https://github.com/lstillwe/readme-generator/blob/main/utils/generateMarkdown.js 
+// https://shields.io/badges
+// https://www.w3schools.com/js/js_switch.asp

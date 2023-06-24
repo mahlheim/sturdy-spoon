@@ -1,80 +1,98 @@
-// TODO: Create a function that returns a license badge based on which license is passed in
-// If there is no license, return an empty string
+// function that returns the specified license badge
 function renderLicenseBadge(license) {
   let badge = '';
   if(license != 'none') {
-    renderLicenseLink();
-  }
+    badge = '![Static Badge](https://img.shields.io/badge/license-' + license + '-pink)';
+  } 
   return badge;
-}
+};
 
-// TODO: Create a function that returns the license link
-// If there is no license, return an empty string
+// function that returns the license link
 function renderLicenseLink(license) {
   let licenseLink; 
-  if (license = 'MIT') {
-    licenseLink = '![license badge](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)'
-  } else if (license = 'Apache') {
-    licenseLink = '![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)'
-  } else if (license = 'IBM') {
-    licenseLink = '![License: IPL 1.0](https://img.shields.io/badge/License-IPL_1.0-blue.svg)](https://opensource.org/licenses/IPL-1.0)'
-  } else {
-    return licenseLink;
+  switch (license) {
+    case 'MIT':
+      licenseLink = 'https://opensource.org/license/mit/ ';
+      break;
+    case 'Apache': 
+      licenseLink = 'https://www.apache.org/licenses/LICENSE-2.0 ';
+      break;
+    case 'IBM': 
+      licenseLink = 'https://www.ibm.com/about/software-licensing/us-en/licensing/license_information_documents ';
+      break;
+    default:
+      licenseLink = '';
+      break;
   }
-}
+  return licenseLink;
+};
 
-// TODO: Create a function that returns the license section of README
-// If there is no license, return an empty string
+// function that returns the license section in the generated README
 function renderLicenseSection(license) {
   let licenseSection = '';
   if (license != 'none') {
     licenseSection += '## License\n'
-    licenseSection += 'Please refer to the license in the repo for more details.';
+    licenseSection += license + '\n'
+    licenseSection += 'Please refer to ' + renderLicenseLink(license) + 'for more details.\n'
+  } else if (license = 'none') {
+    licenseSection += '## License\n'
+    licenseSection += 'None';
   }
   return licenseSection;
-}
+};
 
-// TODO: Create a function to generate markdown for README
+// function that generates markdown for generate README
 function generateMarkdown(response) {
-return `# ${response.name}
-## Description
+  const sections = ['Description', 'Installation', 'Usage', 'Contributions', 'License', 'Tests', 'Questions'];
 
-${response.description}
-        
-## Table of Contents
+  // project name
+  let markdown = '# ' + response.name + '\n';
 
-Description
-Installation
-Usage
-Contributions
-License
-Tests
-Questions
-        
-## Installation
+  // license badge
+  markdown += renderLicenseBadge(response.license) + '\n';
+  markdown += '\n';
 
-${response.installation}
-        
-## Usage
+  // table of contents
+  markdown += '## Table of Contents\n';
+  for (let i = 0; i < sections.length; i++) {
+    markdown += '## ' + sections[i] + '\n';
+  };
+  markdown += '\n';
 
-${response.usage}
-        
-## Contributions
+  // description
+  markdown += '## ' + sections[0] + '\n';
+  markdown += response.description + '\n';
+  markdown += '\n';
 
-${response.contributions}
-        
-## License
+  // installation
+  markdown += '## ' + sections[1] + '\n';
+  markdown += response.installation + '\n';
+  markdown += '\n';
 
-${response.license}
-        
-## Tests
+  // usage
+  markdown += '## ' + sections[2] + '\n';
+  markdown += response.usage + '\n';
+  markdown += '\n';
 
-${response.tests}
-        
-## Questions
+  // contributions
+  markdown += '## ' + sections[3] + '\n';
+  markdown += response.contributions + '\n';
+  markdown += '\n';
 
-Questions? I can be reached via email: ${response.email} or on GitHub: ${response.github}`;
-}
+  // license 
+  markdown += renderLicenseSection(response.license) + '\n';
 
+  // tests
+  markdown += '## ' + sections[5] + '\n';
+  markdown += response.tests + '\n';
+  markdown += '\n';
+
+  // questions
+  markdown += '## ' + sections[6] + '\n';
+  markdown += 'Contact me on [GitHub](https://github.com/' + response.github +')\n';
+  markdown += 'Otherwise, email me at ' + response.email + '! Thanks!\n'
+
+  return markdown;
+};
 
 module.exports = generateMarkdown;
