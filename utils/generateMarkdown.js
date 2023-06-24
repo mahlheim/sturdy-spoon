@@ -36,7 +36,7 @@ function renderLicenseSection(license) {
     licenseSection += 'Please refer to ' + renderLicenseLink(license) + 'for more details.\n'
   } else if (license = 'none') {
     licenseSection += '## License\n'
-    licenseSection += 'None';
+    licenseSection += 'None\n'
   }
   return licenseSection;
 };
@@ -54,9 +54,13 @@ function generateMarkdown(response) {
 
   // table of contents
   markdown += '## Table of Contents\n';
-  for (let i = 0; i < sections.length; i++) {
-    markdown += '## ' + sections[i] + '\n';
-  };
+  markdown += '## [Description](#Description)\n';
+  markdown += '## [Installation](#Installation)\n';
+  markdown += '## [Usage](#Usage)\n';
+  markdown += '## [Contributions](#Contributions)\n';
+  markdown += '## [License](#License)\n';
+  markdown += '## [Tests](#Tests)\n';
+  markdown += '## [Questions](#Questions)\n';
   markdown += '\n';
 
   // description
@@ -89,7 +93,7 @@ function generateMarkdown(response) {
 
   // questions
   markdown += '## ' + sections[6] + '\n';
-  markdown += 'Contact me on [GitHub](https://github.com/' + response.github +')\n';
+  markdown += 'Contact me on [GitHub](https://github.com/' + response.github +')!\n';
   markdown += 'Otherwise, email me at ' + response.email + '! Thanks!\n'
 
   return markdown;
