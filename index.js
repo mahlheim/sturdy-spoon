@@ -3,8 +3,8 @@ const inquirer = require('inquirer');
 const generateMarkdown = require('./utils/generateMarkdown.js'); 
 const fs = require('fs');
 
-inquirer
-    .prompt([
+// array of questions that gather content of README that will be produced
+const questions = [
     {
         type: 'input',
         message: 'What is the name of your project?',
@@ -51,54 +51,26 @@ inquirer
         message: 'What is your email?',
         name: 'email',
     }
-])
-    .then((response) => {
-const fileData = 
-`# ${response.name}
+];
 
-## Description
+// function that writes README file
+function writeToFile(response) {
+    const fileName = 'README.md';
 
-${response.description}
-        
-## Table of Contents
-
-Description
-Installation
-Usage
-Contributions
-License
-Tests
-Questions
-        
-## Installation
-
-${response.installation}
-        
-## Usage
-
-${response.usage}
-        
-## Contributions
-
-${response.contributions}
-        
-## License
-
-${response.license}
-        
-## Tests
-
-${response.tests}
-        
-## Questions
-
-Questions? I can be reached via email: ${response.email} or on GitHub: ${response.github}`
-
-        fs.writeFile('README.md', fileData, (err) =>
+    fs.writeFile(fileName, response, (err) =>
         err ? console.error(err) : console.log('Success!')
-        );
-    }
     );
+}
+
+// function that initializes app
+function init() {
+    inquirer.prompt(questions)
+    .then (response => writeToFile(generateMarkdown(response)));
+}
+
+// calls function that initializes app
+init();
+
 
 // REFERENCES TO ADD TO README WHEN DONE
 // https://gist.github.com/lukas-h/2a5d00690736b4c3a7ba
