@@ -1,4 +1,4 @@
-# hey
+# README Generator
 ![Static Badge](https://img.shields.io/badge/license-Apache-pink)
 
 ## Table of Contents
@@ -11,24 +11,24 @@
 ## [Questions](#Questions)
 
 ## Description
-hey
+This application seeks to make creating a README easy and streamlined.
 
 ## Installation
-hey
+Clone the app from the repo and download inquirer from npmjs.com
 
 ## Usage
-hey
+Navigate to the command line and enter 'node index.js', then answer the questions
 
 ## Contributions
-hey
+N/A
 
 ## License
-Apachelicense.
+Apache license.
 Please refer to https://www.apache.org/licenses/LICENSE-2.0 for more details.
 
 ## Tests
-hey
+N/A
 
 ## Questions
-Contact me on [GitHub](https://github.com/hey)!
-Otherwise, email me at hey! Thanks!
+Contact me on [GitHub](https://github.com/mahlheim)!
+Otherwise, email me at ahlheimmonique@gmail.com! Thanks!
