@@ -1,5 +1,5 @@
 # Sample README
-![Static Badge](https://img.shields.io/badge/license-Apache-pink)
+![Static Badge](https://img.shields.io/badge/license-IBM-pink)
 
 ## Table of Contents
 ## [Description](#Description)
@@ -11,24 +11,24 @@
 ## [Questions](#Questions)
 
 ## Description
-This is a sample of the README generator
+This is a sample README to display the functionality of my README generator
 
 ## Installation
-clone the repo and install inquirer from npmjs.com to run the application 
+clone the app from the repo and install inquirer from npmjs.com
 
 ## Usage
-run node index.js in the command line, then answer the questions
+run 'node index.js' from the command line and answer the questions
 
 ## Contributions
 N/A
 
 ## License
-Apache license.
-Please refer to https://www.apache.org/licenses/LICENSE-2.0 for more details.
+IBM license.
+Please refer to https://www.ibm.com/about/software-licensing/us-en/licensing/license_information_documents for more details.
 
 ## Tests
 N/A
 
 ## Questions
 Contact me on [GitHub](https://github.com/mahlheim)!
-Otherwise, email me at ahlheimmonique@gmial.com! Thanks!
+Otherwise, email me at ahlheimmonique@gmail.com! Thanks!
