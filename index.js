@@ -70,9 +70,3 @@ function init() {
 
 // calls function that initializes app
 init();
-
-
-// REFERENCES TO ADD TO README WHEN DONE
-// https://github.com/lstillwe/readme-generator/blob/main/utils/generateMarkdown.js 
-// https://shields.io/badges
-// https://www.w3schools.com/js/js_switch.asp

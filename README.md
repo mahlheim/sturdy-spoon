@@ -31,7 +31,7 @@ https://www.w3schools.com/js/js_switch.asp
 N/A
 
 ## License
-MIT
+MIT license. 
 Please refer to https://opensource.org/license/mit/ for more details.
 
 ## Tests
