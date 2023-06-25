@@ -32,7 +32,7 @@ function renderLicenseSection(license) {
   let licenseSection = '';
   if (license != 'none') {
     licenseSection += '## License\n'
-    licenseSection += license + 'license.\n'
+    licenseSection += license + ' license.\n'
     licenseSection += 'Please refer to ' + renderLicenseLink(license) + 'for more details.\n'
   } else if (license = 'none') {
     licenseSection += '## License\n'
