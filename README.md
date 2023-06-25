@@ -19,6 +19,8 @@ Clone the repo, then install Inquirer from npmjs.com to run the application from
 ## Usage
 Once installation is complete, run 'node index.js' in the command line from the root folder of the application. You will be asked to answer a series of questions. Once all the questions have been answered, you will recieve a 'success' message and your newly generated README will have appeared in the root folder of the application.
 
+Watch a demo video [here](https://drive.google.com/file/d/1yPDXQI_AQCzoquh9ODmdPrPCeRea6ynC/view)!
+
 ## Credits
 Below are references I used while building this application:
 https://github.com/lstillwe/readme-generator/blob/main/utils/generateMarkdown.js 
