@@ -1,4 +1,4 @@
-# README Generator
+# Sample README
 ![Static Badge](https://img.shields.io/badge/license-Apache-pink)
 
 ## Table of Contents
@@ -11,13 +11,13 @@
 ## [Questions](#Questions)
 
 ## Description
-This application seeks to make creating a README easy and streamlined.
+This is a sample of the README generator
 
 ## Installation
-Clone the app from the repo and download inquirer from npmjs.com
+clone the repo and install inquirer from npmjs.com to run the application 
 
 ## Usage
-Navigate to the command line and enter 'node index.js', then answer the questions
+run node index.js in the command line, then answer the questions
 
 ## Contributions
 N/A
@@ -31,4 +31,4 @@ N/A
 
 ## Questions
 Contact me on [GitHub](https://github.com/mahlheim)!
-Otherwise, email me at ahlheimmonique@gmail.com! Thanks!
+Otherwise, email me at ahlheimmonique@gmial.com! Thanks!
