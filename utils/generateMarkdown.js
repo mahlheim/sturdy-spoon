@@ -27,7 +27,7 @@ function renderLicenseLink(license) {
   return licenseLink;
 };
 
-// function that returns the license section in the generated README
+// function that returns the license section in the generated README file
 function renderLicenseSection(license) {
   let licenseSection = '';
   if (license != 'none') {
@@ -41,7 +41,7 @@ function renderLicenseSection(license) {
   return licenseSection;
 };
 
-// function that generates markdown for generate README
+// function that generates markdown for generated README file
 function generateMarkdown(response) {
   const sections = ['Description', 'Installation', 'Usage', 'Contributions', 'License', 'Tests', 'Questions'];
 

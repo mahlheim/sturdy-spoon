@@ -3,7 +3,7 @@ const inquirer = require('inquirer');
 const generateMarkdown = require('./utils/generateMarkdown.js'); 
 const fs = require('fs');
 
-// array of questions that gather content of README that will be produced
+// array of questions that gather content for generated README file
 const questions = [
     {
         type: 'input',
