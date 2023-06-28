@@ -21,6 +21,8 @@ Once installation is complete, run 'node index.js' in the command line from the 
 
 Watch a demo video [here](https://drive.google.com/file/d/1yPDXQI_AQCzoquh9ODmdPrPCeRea6ynC/view)!
 
+[Here's](https://drive.google.com/file/d/1e4tLIQzzG7jR4lJ-VpDPv58Kv2JMQPqF/view) another demo that uses much more text in the generated README so as to make the functionality of the table of contents easier to see!
+
 ## Credits
 Below are references I used while building this application:
 https://github.com/lstillwe/readme-generator/blob/main/utils/generateMarkdown.js 
