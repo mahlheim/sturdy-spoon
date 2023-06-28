@@ -53,14 +53,14 @@ function generateMarkdown(response) {
   markdown += '\n';
 
   // table of contents
-  markdown += '## Table of Contents\n';
-  markdown += '## [Description](#Description)\n';
-  markdown += '## [Installation](#Installation)\n';
-  markdown += '## [Usage](#Usage)\n';
-  markdown += '## [Contributions](#Contributions)\n';
-  markdown += '## [License](#License)\n';
-  markdown += '## [Tests](#Tests)\n';
-  markdown += '## [Questions](#Questions)\n';
+  markdown += '- Table of Contents\n';
+  markdown += '- [Description](#Description)\n';
+  markdown += '- [Installation](#Installation)\n';
+  markdown += '- [Usage](#Usage)\n';
+  markdown += '- [Contributions](#Contributions)\n';
+  markdown += '- [License](#License)\n';
+  markdown += '- [Tests](#Tests)\n';
+  markdown += '- [Questions](#Questions)\n';
   markdown += '\n';
 
   // description
